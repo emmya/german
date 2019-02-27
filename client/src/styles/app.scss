@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import "./bootstrap/bootstrap.scss";
+@import "./normalize/normalize.scss";
+@import "./normalize/normalize-custom.scss";
+@import "variables.scss";
+
+html, body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+a, button {
+  transition: color 0.3s, opacity 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+a {
+  color: $primary;
+  &:hover {
+    color: darken($primary, 10%);
+  }
+}
+
+body, input, button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+input {
+  border: 1px solid $input-border;
+  padding: 10px;
+  transition: border 0.3s;
+  border-radius: 3px;
+  &:focus {
+    border-color: $primary;
+  }
+}
+
+button {
+  color: white;
+  background-color: $primary;
+  padding: 10px;
+  font-weight: 500;
+  border-radius: 3px;
+  box-shadow: 0 0 0 $primary;
+  &:not(:disabled) {
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 2px $primary;
+    }
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
+}

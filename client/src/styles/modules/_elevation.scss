@@ -1,0 +1,33 @@
+$default-bx: rgba(100, 100, 100, 0.1);
+
+@mixin ev-1($color: $default-bx) {
+  box-shadow: 0 1px 2px 0 $color;
+}
+
+@mixin ev-2($color: $default-bx) {
+  box-shadow: 0 2px 3px 0 $color;
+}
+
+@mixin ev-4($color: $default-bx) {
+  box-shadow: 0 4px 5px 0 $color;
+}
+
+@mixin ev-6($color: $default-bx) {
+  box-shadow: 0 6px 7px 0 $color;
+}
+
+@mixin ev-8($color: $default-bx) {
+  box-shadow: 0 8px 9px 0 $color;
+}
+
+@mixin ev-12($color: $default-bx) {
+  box-shadow: 0 12px 13px 0 $color;
+}
+
+@mixin ev-16($color: $default-bx) {
+  box-shadow: 0 16px 17px 0 $color; 
+}
+
+@mixin ev-24($color: $default-bx) {
+  box-shadow: 0 24px 25px 0 $color; 
+}

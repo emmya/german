@@ -1,0 +1,39 @@
+@import "styles/variables.scss";
+
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: $header-height;
+  @include ev-4;
+  display: flex;
+  align-items: stretch;
+  background-color: white;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: stretch;
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    &.active, &:hover {
+      background-color: $active-link-bg;
+    }
+  }
+}
+
+.headerSpacer {
+  height: $header-height;
+  width: 100%; 
+}
+
+.page {
+  min-height: 100vh;
+  background-color: $bg-light;
+  margin-top: -20px;
+  padding-top: 20px;
+}
