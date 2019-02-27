@@ -1,0 +1,17 @@
+.stepWrap {
+  height: 500px;
+  padding: 30px;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step {
+  transition: opacity 0.3s;
+  &.transitioning {
+    opacity: 0;
+  }
+}
+
