@@ -1,7 +1,8 @@
 import React from 'react';
 import { Router, Route } from 'react-router-dom';
 
-import Navigation from 'components/Navigation';
+import * as routes from 'constants/routes';
+import history from 'constants/history';
 import LandingPage from './Landing';
 import SignUpPage from './SignUp';
 import SignInPage from './SignIn';
@@ -10,12 +11,10 @@ import AdminPage from './Admin';
 import OnboardingPage from './Onboarding';
 import withSession from './_session/withSession';
 
-import * as routes from 'constants/routes';
-import history from 'constants/history';
 
 import { AdminRoute, PrivateRoute, PublicRoute } from './Route';
 
-const App = (props) => (
+const App = props => (
   <Router history={history}>
     <React.Fragment>
       <PrivateRoute
@@ -27,11 +26,11 @@ const App = (props) => (
       <PublicRoute
         exact
         path={routes.SIGN_UP}
-        component={SignUpPage} 
+        component={SignUpPage}
         {...props}
       />
       <PublicRoute
-        path='/onboarding/:step'
+        path="/onboarding/:step"
         component={OnboardingPage}
         {...props}
       />

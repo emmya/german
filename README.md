@@ -11,10 +11,12 @@ Quickstart
 `mongo`
 `use db_name`
 
-2. Add env vars to server
+2. Add env vars
 ```
 echo "SECRET=goodboykent
 DATABASE_URL=mongodb://localhost:27017/db_name" >> server/.env
+echo "NODE_PATH=src/
+SKIP_PREFLIGHT_CHECK=true" >> client/.env
 ```
 
 3. Install ttab globally
