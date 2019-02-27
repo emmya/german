@@ -4,9 +4,9 @@ import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import cx from 'classnames';
 
-import { SignUpLink } from '../SignUp';
 import * as routes from 'constants/routes';
 import ErrorMessage from 'components/Error';
+import { SignUpLink } from '../SignUp';
 
 const SIGN_IN = gql`
   mutation($login: String!, $password: String!) {
@@ -17,8 +17,8 @@ const SIGN_IN = gql`
 `;
 
 const SignInPage = ({ history, refetch }) => (
-  <div className={cx('bg-white', 'text-center', 'p-4')} style={{ maxWidth: '500px', margin: '40px auto' }}>
-    <h1>Sign In</h1>
+  <div className={cx('bg-white', 'text-center', 'p-4')} style={{ maxWidth: '500px', margin: '0 auto' }}>
+    <h1><span role="img">👋</span></h1>
     <SignInForm history={history} refetch={refetch} />
     <SignUpLink />
   </div>
@@ -32,7 +32,7 @@ const INITIAL_STATE = {
 class SignInForm extends Component {
   state = { ...INITIAL_STATE };
 
-  onChange = event => {
+  onChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };

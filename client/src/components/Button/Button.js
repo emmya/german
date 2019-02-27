@@ -20,8 +20,6 @@ const styleBooleans = [
   'danger',
   'default',
   'white',
-  'action',
-  'whitePurple',
 
   // types
   'link',
@@ -30,6 +28,7 @@ const styleBooleans = [
   'inactive',
   'loading',
   'disabled',
+  'ghost',
 ];
 
 const Button = (props) => {

@@ -1,11 +1,33 @@
 {
-  "name": "playground",
+  "name": "german",
   "version": "1.0.0",
-  "description": "",
+  "description": "quick fullstack react/apollo/graphql/express/mongoose/mongodb app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Emmy Armintrout",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmya/german.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emmya/german/issues"
+  },
+  "homepage": "https://github.com/emmya/german#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-react-app": "^3.0.7",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4"
+  }
 }

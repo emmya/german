@@ -8,6 +8,7 @@ import Sidebar from './Sidebar';
 import styles from './layout.module.scss';
 
 const pathName = ({ location }) => (_.get(location, 'pathname') || '').replace('/', '');
+const pagePadding = ({ pageName }) => ({ padding: '40px 0' });
 
 export const SidebarLayout = compose(
   withState('navIsCollapsed', 'setNavCollapsed', false),
@@ -17,12 +18,13 @@ export const SidebarLayout = compose(
     navIsCollapsed,
     setNavCollapsed,
   } = props;
+  const pageName = pathName(props);
   return (
     <React.Fragment>
       <Sidebar {...{ navIsCollapsed, setNavCollapsed }}>
         <Navigation {...props} />
       </Sidebar>
-      <div className={cx(styles.page, styles[`${pathName(props)}Page`], {
+      <div className={cx(styles.page, styles[`${pageName}Page`], {
         [styles.navIsCollapsed]: navIsCollapsed,
         'nav-collapsed': navIsCollapsed,
       })}
@@ -33,17 +35,20 @@ export const SidebarLayout = compose(
   );
 });
 
-const DefaultLayout = ({ children, ...props }) => (
-  <React.Fragment>
-    <Header>
-      <Navigation {...props} />
-    </Header>
-    <div className={cx(styles.page, styles[`${pathName(props)}Page`])}>
-      <div className={cx(styles.page, 'container')}>
-        {children}
+const DefaultLayout = ({ children, ...props }) => {
+  const pageName = pathName(props);
+  return (
+    <React.Fragment>
+      <Header>
+        <Navigation {...props} />
+      </Header>
+      <div className={cx(styles.page, styles[`${pathName(props)}Page`])}>
+        <div className={cx(styles.page, 'container')} style={pagePadding({ pageName })}>
+          {children}
+        </div>
       </div>
-    </div>
-  </React.Fragment>
-)
+    </React.Fragment>
+  );
+};
 
 export default DefaultLayout;

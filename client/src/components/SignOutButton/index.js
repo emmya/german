@@ -8,13 +8,13 @@ const SignOutButton = () => (
   <ApolloConsumer>
     {client => (
       <button type="button" onClick={() => signOut(client)}>
-        Sign Out
+        <i className="fas fa-sign-out-alt" />
       </button>
     )}
   </ApolloConsumer>
 );
 
-const signOut = client => {
+const signOut = (client) => {
   localStorage.removeItem('token');
   client.resetStore();
   history.push(routes.SIGN_IN);

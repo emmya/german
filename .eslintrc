@@ -1,0 +1,88 @@
+{
+  "extends": [
+    "airbnb",
+  ],
+  "rules": {
+    "camelcase": "warn",
+    "func-names": "warn",
+    "import/extensions": "off",
+    "import/no-absolute-path": "off",
+    "import/no-cycle": "warn",
+    "import/no-extraneous-dependencies": "warn",
+    "import/no-unresolved": "error",
+    "jest/no-alias-methods": "warn",
+    "jest/consistent-test-it": ["error", {
+      "fn": "test",
+      "withinDescribe": "test",
+    }],
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "max-len": "warn",
+    "no-extra-parens": ["error", "all", {
+      "enforceForArrowConditionals": false,
+      "ignoreJSX": "multi-line",
+      "nestedBinaryExpressions": false
+     }],
+    "no-process-env": "warn",
+    "no-undef": "warn",
+    "no-underscore-dangle": ["warn", {
+      "allow": ["_id"]
+    }],
+    "no-unused-vars": ["error", {
+      "args": "after-used",
+      "argsIgnorePattern": "^_",
+      "ignoreRestSiblings": true,
+      "vars": "all"
+    }],
+    "react/destructuring-assignment": "warn",
+    "react/forbid-prop-types": "warn",
+    "react/jsx-one-expression-per-line": "off",
+    "react/no-array-index-key": "warn",
+    "react/prefer-stateless-function": "warn",
+    "react/prop-types": "warn",
+    "react/sort-comp": "warn",
+    "react/no-unescaped-entities": "warn",
+    "import/no-named-as-default": "off"
+  },
+  "parser": "babel-eslint",
+  "overrides": [
+    {
+      "files": ["**/@(__tests__|__mocks__)/*.js?(x)"],
+      "env": {
+        "jest": true
+      }
+    },
+    {
+      "files": ["**/*.test?(s).js"],
+      "env": {
+        "jasmine": true,
+        "mocha": true
+      }
+    },
+    {
+      "files": ["settings/*.js"],
+      "rules": {
+        "no-process-env": "off"
+      }
+    }
+  ],
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["/imports/resource-kit", "./resource-kit"],
+          ["/imports/shared-kit", "./shared-kit"],
+          ["/imports/ui-kit", "./client-kit/ui-kit"],
+          ["/imports/utils-kit", "./client-kit/utils-kit"],
+          ["/settings", "./settings"],
+          ["/super-secret-db", "./api/src/db.js"]
+        ]
+      }
+    }
+  }
+}

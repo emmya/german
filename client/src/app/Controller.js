@@ -17,7 +17,7 @@ import { AdminRoute, PrivateRoute, PublicRoute } from './Route';
 
 const App = (props) => (
   <Router history={history}>
-    <div>
+    <React.Fragment>
       <PrivateRoute
         exact
         path={routes.LANDING}
@@ -53,7 +53,7 @@ const App = (props) => (
         component={AdminPage}
         {...props}
       />
-    </div>
+    </React.Fragment>
   </Router>
 );
 

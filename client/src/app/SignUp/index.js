@@ -22,8 +22,8 @@ const INITIAL_STATE = {
 };
 
 const SignUpPage = ({ history, refetch }) => (
-  <div className={cx('bg-white', 'text-center', 'p-4')} style={{ maxWidth: '500px', margin: '40px auto' }}>
-    <h1>Sign Up</h1>
+  <div className={cx('bg-white', 'text-center', 'p-4')} style={{ maxWidth: '500px', margin: '0 auto' }}>
+    <h1><span role="img">✨</span></h1>
     <SignUpForm history={history} refetch={refetch} />
   </div>
 );
@@ -31,7 +31,7 @@ const SignUpPage = ({ history, refetch }) => (
 class SignUpForm extends Component {
   state = { ...INITIAL_STATE };
 
-  onChange = event => {
+  onChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
@@ -58,11 +58,10 @@ class SignUpForm extends Component {
       passwordConfirmation,
     } = this.state;
 
-    const isInvalid =
-      password !== passwordConfirmation ||
-      password === '' ||
-      email === '' ||
-      username === '';
+    const isInvalid = password !== passwordConfirmation
+      || password === ''
+      || email === ''
+      || username === '';
 
     return (
       <Mutation
