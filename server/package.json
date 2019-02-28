@@ -27,6 +27,7 @@
     "morgan": "^1.9.1"
   },
   "dependencies": {
+    "@typeform/api-client": "^1.3.0",
     "apollo-server": "^2.2.3",
     "apollo-server-express": "^2.2.3",
     "bcrypt": "^3.0.2",
@@ -38,6 +39,7 @@
     "graphql-iso-date": "^3.6.1",
     "graphql-resolvers": "^0.3.2",
     "jsonwebtoken": "^8.4.0",
+    "lodash": "^4.17.11",
     "mongoose": "^5.3.14",
     "uuid": "^3.3.2",
     "validator": "^10.9.0"
