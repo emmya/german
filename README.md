@@ -1,12 +1,10 @@
-## **G**raphql **E**xpress **R**eact **M**ongo **A**pollo **N**ode
+**G**raphql **E**xpress **R**eact **M**ongo **A**pollo **N**ode
 
-Built on top of these boilerplates:
-[server](https://github.com/the-road-to-graphql/fullstack-apollo-express-mongodb-boilerplate)
-[client](https://github.com/the-road-to-graphql/fullstack-apollo-react-boilerplate)
+Built on top of these boilerplates: [server](https://github.com/the-road-to-graphql/fullstack-apollo-express-mongodb-boilerplate), [client](https://github.com/the-road-to-graphql/fullstack-apollo-react-boilerplate)
 
 ---
 
-#### Quickstart
+**Quickstart**
 
 1. Add env vars
 ```
@@ -25,7 +23,7 @@ docker-compose up
 ```
 
 
-#### Slow start
+**Dockerless start**
 
 1. Create local mongo db
 
@@ -53,8 +51,10 @@ sh dev.sh
 ```
 
 
-Todo
+**Wishlist**
 - [ ] server-side rendering
 - [ ] seo ish
 - [ ] code splitting
+- [ ] tests
 - [ ] ci
+- [ ] aws
