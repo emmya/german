@@ -1,20 +1,46 @@
-quick fullstack react/apollo/graphql/express/mongoose/mongodb app
+## **G**raphql **E**xpress **R**eact **M**ongo **A**pollo **N**ode
 
-server: https://github.com/the-road-to-graphql/fullstack-apollo-express-mongodb-boilerplate
-client: https://github.com/the-road-to-graphql/fullstack-apollo-react-boilerplate
+Built on top of these boilerplates:
+[server](https://github.com/the-road-to-graphql/fullstack-apollo-express-mongodb-boilerplate)
+[client](https://github.com/the-road-to-graphql/fullstack-apollo-react-boilerplate)
 
-Quickstart
+---
+
+#### Quickstart
+
+1. Add env vars
+```
+echo "APP_ENV=development
+NODE_ENV=development
+DATABASE_URL=mongodb://mongo:27017/german
+SECRET=goodboykent" >> server/.env.docker
+echo "NODE_PATH=src/
+SKIP_PREFLIGHT_CHECK=true" >> client/.env
+```
+
+2. Start with Docker
+```
+docker-compose build
+docker-compose up
+```
+
+
+#### Slow start
 
 1. Create local mongo db
 
-`mongod`
-`mongo`
-`use db_name`
+```
+mongod
+mongo
+use german
+```
 
-2. Add env vars to server
+2. Add env vars
 ```
 echo "SECRET=goodboykent
-DATABASE_URL=mongodb://localhost:27017/db_name" >> server/.env
+DATABASE_URL=mongodb://localhost:27017/german" >> server/.env
+echo "NODE_PATH=src/
+SKIP_PREFLIGHT_CHECK=true" >> client/.env
 ```
 
 3. Install ttab globally

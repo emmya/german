@@ -1,0 +1,54 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo:4.0
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITD_DATABASE=german
+    volumes:
+      - mongo_data:/data/db
+
+  server:
+    build:
+      context: .
+      dockerfile: ./server/Dockerfile
+    env_file: ./server/.env.docker
+    working_dir: /app/server
+    command: yarn start:docker
+    ports:
+      - "4400:4400"
+      - "8000:8000"
+    depends_on:
+      - mongo
+    volumes:
+      - ./server/src:/app/server/src
+      - ./server/.babelrc:/app/server/.babelrc
+      - ./server/package.json:/app/server/package.json
+      - ./server/webpack:/app/server/webpack
+      # - ./server/jest.config.js:/app/server/jest.config.js
+      # - ./server/test:/app/server/test
+      # - ./settings:/app/server/settings
+      # - ./config:/app/server/config
+
+  client:
+    build:
+      context: .
+      dockerfile: ./client/Dockerfile
+    env_file: ./client/.env
+    working_dir: /app/client
+    command: yarn start
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    volumes:
+      - ./client/src:/app/client/src
+      - ./client/package.json:/app/client/package.json
+      - ./client/scripts:/app/client/scripts
+      - ./client/config:/app/client/config
+      - ./client/public:/app/client/public
+
+volumes:
+  mongo_data: {}
